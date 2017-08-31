@@ -1,0 +1,16 @@
+{
+  "files": [
+    "bin/bootstrap.php"
+  ],
+  "directories": ["src", "bin"],
+  "finder": [
+    {
+      "name": "*.php",
+      "exclude": ["test", "Tests"],
+      "in": "vendor"
+    }
+  ],
+  "main": "bin/bootstrap.php",
+  "output": "dist/alerter.phar",
+  "stub": true
+}

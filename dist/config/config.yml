@@ -1,0 +1,47 @@
+config:
+    # interval to check in minutes
+    interval: 1
+    threshold: 1000
+    times: 3
+    country: 1
+mail:
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    mailer_port: 25
+    mail_from: {"name@email.com":"Name"}
+    mail_to: ['name@email.com']
+sms:
+    sms_url: 'sms url here'
+    sms_from: Name
+    sms_to: [phone_number]
+    sms_key: 'SMS_KEY'
+
+monitor:
+    amqp.connection:
+        type: amqp-http-queue
+        details:
+            connection: '{{amqp-connection}}'
+            name:       queue_name
+    disk.connection:
+        type: disk-request
+        details:
+            connection: '{{disk-connection}}'
+            name:       name
+    google:
+        type: http-request
+        details:
+            url: 'http://google.ro/avasdadgfas'
+            name:       google
+common:
+    some-connection:
+        hostname:   'hostname'
+        port:        5672
+        username:   'username'
+        password:   'password'
+        vhost:      'vhost'
+    disk-connection:
+        hostname:   'hostname'
+        username:   'username'
+        password:   'password'
